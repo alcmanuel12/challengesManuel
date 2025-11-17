@@ -54,7 +54,70 @@ organizeInventory(inventory2)
  * @param {{ name: string, quantity: number, category: string }[]} inventory
  * @returns {object} The organized inventory
  */
+
+
+
+const inventory = [
+  { name: 'doll', quantity: 5, category: 'toys' },
+  { name: 'car', quantity: 3, category: 'toys' },
+  { name: 'ball', quantity: 2, category: 'sports' },
+  { name: 'car', quantity: 2, category: 'toys' },
+  { name: 'racket', quantity: 4, category: 'sports' }
+]
+
+
+
 function organizeInventory(inventory) {
-  // Code here
-  return {}
+const inventoryOrganized = {};
+  for (let i = 0; i < inventory.length; i++){
+    const name = inventory[i].name;
+    const quantity = inventory[i].quantity;
+    const category = inventory[i].category;
+
+    if(!inventoryOrganized[category]){
+      inventoryOrganized[category] = {}
+    }
+
+    if (!inventoryOrganized[category][name]) {
+      inventoryOrganized[category][name] = quantity;
+    } else {
+      inventoryOrganized[category][name] += quantity;
+    }
+  }
+
+  
+  
+  return inventoryOrganized
 }
+
+console.log(organizeInventory(inventory));
+
+
+const inventory2 = [
+  { name: 'book', quantity: 10, category: 'education' },
+  { name: 'book', quantity: 5, category: 'education' },
+  { name: 'paint', quantity: 3, category: 'art' }
+]
+
+
+function organizeInventory2(inventory2){
+  inventory2Organized = {}
+  for (let i = 0; i < inventory2.length; i++){
+    name2 = inventory2[i].name;
+    quantity2 = inventory2[i].quantity
+    category2 = inventory2[i].category
+
+    if (!inventory2Organized[category2]){
+      inventory2Organized[category2] = {}
+    }
+
+    if (!inventory2Organized[category2][name2]){
+      inventory2Organized[category2][name2] = quantity2
+    }else{
+      inventory2Organized[category2][name2] += quantity2
+    }
+  }
+  return inventory2Organized
+}
+
+console.log(organizeInventory2(inventory2))

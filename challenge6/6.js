@@ -1,4 +1,5 @@
-/* El Grinch ha hackeado los sistemas del taller de Santa Claus y ha codificado los nombres de todos los archivos importantes. Ahora los elfos no pueden encontrar los archivos originales y necesitan tu ayuda para descifrar los nombres. 
+/* El Grinch ha hackeado los sistemas del taller de Santa Claus y ha codificado los nombres de todos los archivos importantes. 
+Ahora los elfos no pueden encontrar los archivos originales y necesitan tu ayuda para descifrar los nombres. 
 Cada archivo sigue este formato: 
 Comienza con un número (puede contener cualquier cantidad de dígitos). 
 Luego tiene un guion bajo _. 
@@ -16,6 +17,10 @@ Ejemplos: decodeFilename('2023122512345678_sleighDesign.png.grinchwa') // ➞ "s
  * @returns {string} The decoded filename.
  */
 function decodeFilename(filename) {
-  // Code here
-  return ''
+  let parts = filename.split('_');
+  let rightPart = parts.slice(1).join('_');
+  let finalParts = rightPart.split('.');
+  finalParts.pop();
+  return finalParts.join('.');
 }
+

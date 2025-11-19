@@ -16,10 +16,24 @@ console.log(preparedGifts3) // []
 // No hay regalos, la lista queda vacía */
 
 /**
- * @param {number[]} gifts - The array of gifts to prepare
+ * @param {number[]} regalos - The array of gifts to prepare
  * @returns {number[]} An array with the prepared gifts
  */
-function prepareGifts(gifts) {
-  // Code here
-  return []
+function prepareGifts(regalos) {
+  const regalosUnicos = new Set(regalos);
+  const arregloRegalosUnicos = Array.from(regalosUnicos);
+  arregloRegalosUnicos.sort((a, b) => a - b);
+  return arregloRegalosUnicos;
 }
+
+const regalos1 = [3, 1, 2, 3, 4, 2, 5];
+const regalosPreparados1 = prepararRegalos(regalos1);
+console.log(regalosPreparados1);
+
+const regalos2 = [6, 5, 5, 5, 5];
+const regalosPreparados2 = prepararRegalos(regalos2);
+console.log(regalosPreparados2);
+
+const regalos3 = [];
+const regalosPreparados3 = prepararRegalos(regalos3);
+console.log(regalosPreparados3);

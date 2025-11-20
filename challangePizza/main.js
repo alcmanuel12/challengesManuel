@@ -15,6 +15,8 @@ class suplemento {
 
 const margarita = new PizzaBase('Marguerita', 9.30, ['Tomate', 'Mozzarella', 'Albahaca']);
 const prosciutto = new PizzaBase('Prosciutto', 12.00, [ 'Tomate', 'mozzarella', 'jamón dulce' , 'orégano']);
+const prosciuttoEfungi = new PizzaBase('Prosciutto e funghi', 12.50,[ 'Tomate', 'mozzarella', 'jamón dulce' ,'champiñones', 'orégano'] )
+const stacioni4 = new PizzaBase('4 stacioni', 12.50,[ 'Tomate', 'mozzarella', 'jamón dulce' ,'champiñones','alcachofas','oliva', 'orégano'])
 
 const ingredientesBasicos = [
     new suplemento('Jamón dulce', 0.90),
@@ -37,7 +39,12 @@ const premium = [
     new Suplemento('Salmón', 2.20),
     new Suplemento('Ternera picada', 2.20)
 ];
+const salsas = [
+    new Suplemento('Salsa barbacoa', 1.00),
+    new Suplemento('Salsa picante', 0.90)
+]
 
+const bordeRelleno = new Suplemento('Borde relleno de queso', 1.20)
 
 function MenuPizzeria(PizzaBase, suplemento){
     let precioFinal = PizzaBase.precioBase;
